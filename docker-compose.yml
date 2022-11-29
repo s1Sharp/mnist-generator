@@ -3,7 +3,11 @@ version: '3.7'
 services:
   app:
     build: ./
-    image: image-generator
+    container_name: mnist-generator
+    image: s1sharp/mnist-generator
     ports:
       - 5000:5000
-    command: "python web_app/app.py release"
+    environment:
+          - APP_VERSION_ENV=release
+    restart: on-failure
+    command: "python web_app/app.py $APP_VERSION_ENV"

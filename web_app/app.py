@@ -4,8 +4,8 @@ import os
 
 # Toch utils
 import torch
-import numpy as np
 
+# Control functions
 from controller.generator import Generator, load_generator_from_file
 from controller.image_generator import generate_image, generate_image_zip, normalize_seed
 from controller.image_generator import GENERATED_PATH
@@ -20,7 +20,6 @@ app = Flask(__name__)
 bootstrap = Bootstrap5(app)
 
 generator = load_generator_from_file(f"{APP_PATH}/models/generator.pth")
-
 
 @app.route('/favicon.ico')
 def favicon():
