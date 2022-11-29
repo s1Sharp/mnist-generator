@@ -29,3 +29,13 @@ Usage docker pull
 ```sh
 docker pull s1sharp/image-generator
 ```
+
+Usage docker run
+```sh
+docker run -p 5000:5000 -d s1sharp/mnist-generator:latest python web_app/app.py release
+```
+
+Usage web application
+```sh
+python -m webbrowser "http://localhost:5000/"
+```
